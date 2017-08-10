@@ -21,15 +21,38 @@ apply plugin: 'eclipse-wtp'
 apply plugin: 'idea'
 
 apply plugin: 'org.springframework.boot'
+apply plugin: 'maven-publish' // Artifactory
 
 version = '1.0'
+group = 'org.cloudfoundry.samples.music' // Artifactory
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    //maven { url 'http://ec2-34-212-76-76.us-west-2.compute.amazonaws.com:8081/artifactory/repo' }  // Artifactory
 }
+
+
+// Artifactory
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+              username 'admin'
+              password 'password'
+            }
+            url "http://ec2-34-212-76-76.us-west-2.compute.amazonaws.com:8081/artifactory/libs-release-local"
+        }
+    }
+}
+
 
 dependencies {
     // Spring Boot
