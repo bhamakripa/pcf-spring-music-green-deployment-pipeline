@@ -86,6 +86,6 @@ dependencies {
 }
 
 jar {
-    baseName = "spring-music"
+    baseName = "spring-music-green"
     version = "" // omit the version from the war file name
 }
