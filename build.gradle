@@ -31,7 +31,7 @@ targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    //maven { url 'http://ec2-34-210-96-55.us-west-2.compute.amazonaws.com:8081/artifactory/repo' }  // Artifactory
+    //maven { url 'http://ec2-35-163-128-120.us-west-2.compute.amazonaws.com:8081/artifactory/repo' }  // Artifactory
 }
 
 
@@ -48,7 +48,7 @@ publishing {
               username 'admin'
               password 'password'
             }
-            url "http://ec2-34-210-96-55.us-west-2.compute.amazonaws.com:8081/artifactory/libs-release-local"
+            url "http://ec2-35-163-128-120.us-west-2.compute.amazonaws.com:8081/artifactory/libs-release-local"
         }
     }
 }
